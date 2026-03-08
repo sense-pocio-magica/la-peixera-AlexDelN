@@ -1,9 +1,12 @@
-﻿namespace Tasca;
+﻿namespace Pexetaria;
 
-internal class Program
+class Program
 {
     static void Main(string[] args)
     {
-        Console.WriteLine("Hello, World!");
+        Peixera peixera = new Peixera();
+
+        peixera.PreJoc();
+        peixera.Joc();
     }
 }
