@@ -1,14 +1,28 @@
 namespace Pexetaria;
 
-public class Pop
+public class Pop : Peix
 {
-    private int PosicioY { get; set; }
-    private int PosicioX { get; set; }
-
-    public void MouPop()
+    public Pop(bool Femeni, int posicaoX, int posicaoY) : base(Femeni, posicaoX, posicaoY)
     {
         
-         if (PosicioY == 20 && PosicioX < 20)
+    }
+
+    public override void Interactuar(Peix altre)
+    {
+        if (altre is Pop)
+        {
+
+            if (altre.Viu == true && this.Viu == true)
+            {
+                CanviaDireccio();
+            }
+        }
+    }
+
+
+    public override void Moure()
+    {
+        if (PosicioY == 20 && PosicioX < 20)
         {
             PosicioX++;
         }
@@ -20,9 +34,11 @@ public class Pop
         {
             PosicioX--;
         }
-         else if (PosicioX == 0 && PosicioY > 0)
-         {
-             PosicioY++;
-         }
+        else if (PosicioX == 0 && PosicioY > 0)
+        {
+            PosicioY++;
+        }
     }
+
+   
 }

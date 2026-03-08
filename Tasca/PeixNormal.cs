@@ -31,5 +31,8 @@ public class PeixNormal : Peix
             
     }
 
-    
+    public override void Moure()
+    {
+        base.Moure();
+    }
 }

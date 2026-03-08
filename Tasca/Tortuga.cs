@@ -19,4 +19,9 @@ public class Tortugua : Peix
             
         }
     }
+    
+    public override void Moure()
+    {
+        base.Moure();
+    }
 }

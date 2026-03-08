@@ -20,14 +20,22 @@ public class Tauro : Peix
         
     }
 
-    public bool Mort()
+    public void Mort(Peix tau)
     {
-        int contador = 0;
-        contador++;
-        if (contador == 50)
+        if (tau is Tauro)
         {
-           return true; 
+            int contador = 0;
+            contador++;
+            if (contador == 75)
+            {
+                tau.Viu = false;
+            }
         }
-        return false;
+        
+    }
+    
+    public override void Moure()
+    {
+        base.Moure();
     }
 }

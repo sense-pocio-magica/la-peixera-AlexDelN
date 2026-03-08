@@ -18,7 +18,16 @@ public abstract class Peix
     }
 
     public abstract void Interactuar(Peix altre);
-   
+
+    protected virtual void CanviaDireccio()
+    
+    {
+        Direccio = Direccio+ 2;
+        if (Direccio > 4)
+        {
+            Direccio = Direccio - 4;
+        }
+    }
     
     public void Reprodueix()
     {
@@ -29,8 +38,25 @@ public abstract class Peix
     {
         
     }
-    public void Moure()
+    
+    public virtual void Moure()
     {
+        if (Direccio == 1)
+        {
+            PosicioX--;
+        }
+        else if (Direccio == 2)
+        {
+            PosicioY--;
+        }
+        else if (Direccio == 3)
+        {
+            PosicioX++;
+        }
+        else if (Direccio == 4)
+        {
+            PosicioY++;
+        }
         
     }
 }
