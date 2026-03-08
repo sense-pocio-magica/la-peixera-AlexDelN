@@ -15,6 +15,7 @@ public abstract class Peix
         PosicioX = posicioX;
         PosicioY = posicioY;
         Direccio = new Random().Next(0, 4);
+        Viu = true;
     }
 
     public abstract void Interactuar(Peix altre);
@@ -28,16 +29,10 @@ public abstract class Peix
             Direccio = Direccio - 4;
         }
     }
-    
-    public void Reprodueix()
-    {
-      
-    }
 
-    public void Baralla()
-    {
-        
-    }
+    public abstract Peix Reprodueix(Peix altre);
+    
+    
     
     public virtual void Moure()
     {

@@ -5,7 +5,7 @@ public class PeixNormal : Peix
 
     public PeixNormal(bool Femeni, int posicaoX, int posicaoY) : base(Femeni, posicaoX, posicaoY)
     {
-        
+
     }
 
     public override void Interactuar(Peix altre)
@@ -28,8 +28,27 @@ public class PeixNormal : Peix
         {
             this.Viu = false;
         }
-            
+
     }
+
+    public override Peix Reprodueix(Peix altre)
+    {
+        if (altre is PeixNormal)
+        {
+            if (this.Femeni != altre.Femeni)
+            {
+                PeixNormal fill = new PeixNormal(
+                    false,
+                    this.PosicioX,
+                    this.PosicioY
+                );
+                return fill;
+
+            }
+        }
+        return null;
+    }
+
 
     public override void Moure()
     {

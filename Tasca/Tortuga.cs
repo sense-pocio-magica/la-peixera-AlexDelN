@@ -19,7 +19,25 @@ public class Tortugua : Peix
             
         }
     }
-    
+
+    public override Peix Reprodueix(Peix altre)
+    {
+        if (altre is Tortugua)
+        {
+            if (this.Femeni != altre.Femeni)
+            {
+                Tortugua fill = new Tortugua(
+                    false,
+                    this.PosicioX,
+                    this.PosicioY
+                );
+                return fill;
+
+            }
+        }
+        return null;
+    }
+
     public override void Moure()
     {
         base.Moure();

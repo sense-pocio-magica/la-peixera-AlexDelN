@@ -19,6 +19,12 @@ public class Pop : Peix
         }
     }
 
+    public override Peix Reprodueix(Peix altre)
+    {
+        return null;
+    }
+
+
 
     public override void Moure()
     {

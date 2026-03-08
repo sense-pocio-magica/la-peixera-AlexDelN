@@ -20,6 +20,24 @@ public class Tauro : Peix
         
     }
 
+    public override Peix Reprodueix(Peix altre)
+    {
+        if (altre is Tauro)
+        {
+            if (this.Femeni != altre.Femeni)
+            {
+                Tauro fill = new Tauro(
+                    false,
+                    this.PosicioX,
+                    this.PosicioY
+                );
+                return fill;
+
+            }
+        }
+        return null;
+    }
+
     public void Mort(Peix tau)
     {
         if (tau is Tauro)
