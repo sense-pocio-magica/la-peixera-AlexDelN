@@ -17,6 +17,14 @@ public class Pop : Peix
                 CanviaDireccio();
             }
         }
+
+        if (altre is Tauro)
+        {
+            if (altre.Viu == true && this.Viu == true)
+            {
+                this.Viu = false;
+            }
+        }
     }
 
     public override Peix Reprodueix(Peix altre)

@@ -8,6 +8,7 @@ public class PeixNormal : Peix
 
     }
 
+
     public override void Interactuar(Peix altre)
     {
         if (altre is PeixNormal)
@@ -37,19 +38,31 @@ public class PeixNormal : Peix
         {
             if (this.Femeni != altre.Femeni)
             {
-                PeixNormal fill = new PeixNormal(
-                    false,
-                    this.PosicioX,
-                    this.PosicioY
-                );
-                return fill;
+                int r = rnd.Next(0, 2);
+                if (r == 0)
+                {
+                    PeixNormal fill = new PeixNormal(
+                        false,
+                        this.PosicioX,
+                        this.PosicioY
+                    );
 
+                    return fill;
+                }
+
+                if (r == 1)
+                {
+                    PeixNormal fill = new PeixNormal(
+                        true,
+                        this.PosicioX,
+                        this.PosicioY
+                    );
+                }
             }
         }
         return null;
     }
-
-
+    
     public override void Moure()
     {
         base.Moure();

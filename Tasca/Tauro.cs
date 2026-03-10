@@ -26,13 +26,26 @@ public class Tauro : Peix
         {
             if (this.Femeni != altre.Femeni)
             {
-                Tauro fill = new Tauro(
-                    false,
-                    this.PosicioX,
-                    this.PosicioY
-                );
-                return fill;
+                int r = rnd.Next(0, 2);
 
+                if (r == 1)
+                {
+                    Tauro fill = new Tauro(
+                        false,
+                        this.PosicioX,
+                        this.PosicioY
+                    );
+                    return fill;
+                }
+                else if (r == 1)
+                {
+                    Tauro fill = new Tauro(
+                        true,
+                        this.PosicioX,
+                        this.PosicioY
+                    );
+                    return fill; 
+                }
             }
         }
         return null;
@@ -49,7 +62,6 @@ public class Tauro : Peix
                 tau.Viu = false;
             }
         }
-        
     }
     
     public override void Moure()

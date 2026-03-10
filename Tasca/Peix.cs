@@ -17,6 +17,8 @@ public abstract class Peix
         Direccio = new Random().Next(0, 4);
         Viu = true;
     }
+    protected static Random rnd = new Random();
+
 
     public abstract void Interactuar(Peix altre);
 

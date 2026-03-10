@@ -10,7 +10,6 @@ public class Peixera
     {
         Peixos = new List<Peix>();
     }
-
     private Pop CrearPopBorde()
     {
         int costat = rnd.Next(4);
@@ -32,19 +31,15 @@ public class Peixera
         for (int i = 0; i < 50; i++)
         {
             Peixos.Add(new PeixNormal(false, rnd.Next(0, 20), rnd.Next(0, 20)));
-        }
-        
-        for (int i = 0; i < 50; i++)
-        {
             Peixos.Add(new PeixNormal(true, rnd.Next(0, 20), rnd.Next(0, 20)));
+
         }
+     
         for (int i = 0; i < 10; i++)
         {
             Peixos.Add(new Tauro(false, rnd.Next(0, 20), rnd.Next(0, 20)));
-        }
-        for (int i = 0; i < 10; i++)
-        {
-            Peixos.Add(new PeixNormal(true, rnd.Next(0, 20), rnd.Next(0, 20)));
+            Peixos.Add(new Tauro(true, rnd.Next(0, 20), rnd.Next(0, 20)));
+
         }
         for (int i = 0; i < 15; i++)
         {
@@ -53,11 +48,10 @@ public class Peixera
         for (int i = 0; i < 3; i++)
         {
             Peixos.Add(new Tortugua(true, rnd.Next(0, 20), rnd.Next(0, 20)));
-        }
-        for (int i = 0; i < 3; i++)
-        {
             Peixos.Add(new Tortugua(false, rnd.Next(0, 20), rnd.Next(0, 20)));
+
         }
+       
     }
     public void Joc()
     {
@@ -94,8 +88,8 @@ public class Peixera
                 }
             }
             Peixos.AddRange(nousPeixos);
-
         }
+        
         Console.WriteLine("Peixos normals: " + Peixos.Count(p => p is PeixNormal));
         Console.WriteLine("Taurons: " + Peixos.Count(p => p is Tauro));
         Console.WriteLine("Pops: " + Peixos.Count(p => p is Pop));
