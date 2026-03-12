@@ -15,7 +15,6 @@ public class Tortugua : Peix
         {
             if (this.Femeni == altre.Femeni)
             {
-                Console.WriteLine("Dos tortugues es matan");
                 this.Viu = false;
                 altre.Viu = false;
             }
@@ -29,7 +28,6 @@ public class Tortugua : Peix
         {
             bool sexe = rnd.Next(0, 2) == 0? false : true;
             
-            Console.WriteLine("Crien tortugues");
             Tortugua fill = new Tortugua(
                         sexe,
                         this.PosicioX,

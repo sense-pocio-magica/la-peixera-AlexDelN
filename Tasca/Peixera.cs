@@ -3,7 +3,6 @@ namespace Pexetaria;
 public class Peixera
 {
     private List<Peix> Peixos { get; set; }
-
     protected static Random rnd = new Random();
 
     public Peixera()
@@ -39,7 +38,6 @@ public class Peixera
         {
             Peixos.Add(new Tauro(false, rnd.Next(0, 20), rnd.Next(0, 20)));
             Peixos.Add(new Tauro(true, rnd.Next(0, 20), rnd.Next(0, 20)));
-
         }
         for (int i = 0; i < 15; i++)
         {
@@ -51,7 +49,7 @@ public class Peixera
             Peixos.Add(new Tortugua(false, rnd.Next(0, 20), rnd.Next(0, 20)));
 
         }
-       
+    
     }
     public void Joc()
     {
@@ -60,6 +58,10 @@ public class Peixera
             foreach (var peix in Peixos)
             {
                 peix.Moure();
+                if(this is Tauro)
+                {
+                    
+                }
             }
             
             Peixos.RemoveAll(p => !p.Viu);
@@ -95,8 +97,4 @@ public class Peixera
         Console.WriteLine("Pops: " + Peixos.Count(p => p is Pop));
         Console.WriteLine("Tortugues: " + Peixos.Count(p => p is Tortugua));
     }
-
-
-
-
 }

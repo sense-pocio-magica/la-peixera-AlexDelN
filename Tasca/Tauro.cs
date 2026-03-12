@@ -16,8 +16,7 @@ public class Tauro : Peix
                 this.Viu = false;
                 altre.Viu = false;
             }
-        }
-        
+        } 
     }
 
     public override Peix Reprodueix(Peix altre)
@@ -51,21 +50,20 @@ public class Tauro : Peix
         return null;
     }
 
-    public void Mort(Peix tau)
+private int contador = 0;
+   public void Mort()
+{
+    contador++;
+    if (contador >= 75)
     {
-        if (tau is Tauro)
-        {
-            int contador = 0;
-            contador++;
-            if (contador == 75)
-            {
-                tau.Viu = false;
-            }
-        }
+        this.Viu = false;
     }
+}
     
     public override void Moure()
     {
         base.Moure();
+        Mort();
+
     }
 }
